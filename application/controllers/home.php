@@ -51,12 +51,25 @@ class Home extends CI_Controller {
 	}
 
 
+	
+
+
+
 	public function edit($id){
-		$data['op']= 'edit';
 		$data['sql1'] = $this->m->edit($id);
 		$this->load->view('header');
 		$this->load->view('shop', $data);
 		$this->load->view('footer');
+	}
+
+	public function update(){
+		$result = $this->m->update();
+		if($result){
+			$this->session->set_flashdata('success_msg', 'Record updated successfully');
+		}else{
+			$this->session->set_flashdata('error_msg', 'Faill to update record');
+		}
+		redirect(base_url('home'));
 	}
 
 
@@ -65,6 +78,7 @@ class Home extends CI_Controller {
 		redirect('home');
 	}
 
+	
 
 }
 

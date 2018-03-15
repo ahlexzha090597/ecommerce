@@ -1,39 +1,100 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>POTTERHEAD E-COMMERCE</title>
-
-    <!-- Bootstrap -->
+    <title>POTTERHEAD E-COMMERCE</title>    
     <link href="<?php echo base_url(); ?>assets/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+     .navbar-custom {
+    background-color:#10dffd;
+    color:#10dffd;
+    border-radius:2;
+    }
+    
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    .navbar-custom .navbar-nav > li > a {
+    color:#fff;
+    }
+
+    .navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+
+    }
+
+    .navbar-custom .navbar-nav > li > a:hover,
+    .navbar-custom .navbar-nav > li > a:focus,
+    .navbar-custom .navbar-nav > .active > a:hover,
+    .navbar-custom .navbar-nav > .active > a:focus,
+    .navbar-custom .navbar-nav > .open >a {
+        text-decoration: none;
+        background-color: #10dffd;
+    }
+
+
+    .navbar-custom .navbar-brand {
+    color:#ffffff;
+    }
+    .navbar-custom .navbar-toggle {
+    background-color:#10dffd;
+    }
+    .navbar-custom .icon-bar {
+    background-color:#10dffd;
+    }
+
+    .body{
+
+      background-image: url:("..image/bg.png");
+      background-repeat: no-repeat;
+    }
+
+    tr:hover {background-color: #10dffd;}
+
+    </style>
+
+
   </head>
   <body>
-        <div class="container">
-         <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">POTTERHEAD</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Page 1</a></li>
-              <li><a href="#">Page 2</a></li>
-              <li><a href="#">Page 3</a></li>
-            </ul>
-          </div>
-        </nav>
+ <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" >POTTERHEAD</a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> </a>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
   
 <div class="container" style="margin-top:100px">
+  <br>
   
 
 

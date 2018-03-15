@@ -24,13 +24,27 @@ class M_shop extends CI_Model{
 	function edit($id){
 		$this->db->where("id_shop", $id);
 		return $this->db->get('tbl_shop');
-	}
 
+	}
 
 	function update($id,$data){
 		$this->db->where("id_shop", $id);
 		$this->db->update('tbl_shop', $data);
 	}
+	
 
+	
 
+  
+
+ 
 }
+
+
+
+
+
+	
+
+
+	

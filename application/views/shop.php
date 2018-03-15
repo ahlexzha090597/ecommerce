@@ -1,18 +1,32 @@
 
 
 <button type="button"  class="btn btn-success btn" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD PRODUCT</button> 
+
+<form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> <button type="button"><span class="glyphicon glyphicon-search"></span></button>
+
+      </div>
+      
+    </form>
 <br>
+
 <br>
+
+
 <div class="container-fluid">
+
 	<div class="row">
 		<div class="col-lg-lg-lg">
 			<div class="panel panel-success">
 				<div class="panel-heading">
+
 					<h3 class="panel-title">Product List</h3>
 				</div>
 					<div class="panel-body">
 
-						<table class="table table-striped">
+
+						<table class="table table-striped" id="myTable">
 						  <tr>
 						  	<th>No</th>
 						  	<th>Product Name</th>
@@ -37,9 +51,44 @@
 										<td><?php echo $obj1->price; ?></td>
 										<td>
 											
-										 <a class="btn btn-info btn-s"x data-toggle="modal" data-target="#myModal">edit</a>
-										 <a href="javascript:if(confirm('Are you sure you want to remove it??')){document.location='<?php echo base_url();?>index.php/home/remove/<?php echo $obj1->id_shop; ?>'}" class="btn btn-danger btn-s">remove </a>
+										 <a class="btn btn-info btn-s item-edit" data="<?php echo $obj1->id_shop; ?>" data-toggle="modal" data-target="#myModal" data="<?php echo $obj1->id_shop; ?>"> <span class="glyphicon glyphicon-edit"></span></a>
+										 <a data-toggle="modal" data-target="#dltModal" class="btn btn-danger btn-s"> <span class="glyphicon glyphicon-trash"></span></a>
 										 </td>
+
+										 <div class="modal fade" id="dltModal" role="dialog">
+										 	<div class="modal-dialog modal-sm">
+
+										 		<div class="modal-content">
+										 			<div class="modal-header">
+										 				<button type="button" class="close" data-dismiss="modal">&times;</button>
+										 			</div>
+										 				<div class="modal-body" >
+										 					<center><h5><b>Are you sure you want to delete it?</b></h5></center>
+
+										 						<form action="<?php echo base_url();?>index.php/home/remove/<?php echo $obj1->id_shop; ?>">
+
+										 							<center>
+
+										 								<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-trash"></span> Remove</button>
+										 								</form>
+
+										 								&nbsp;&nbsp;&nbsp;
+										 								
+										 								<button type="submit" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+										 							</center>
+										 						</form>
+										 				</div>
+
+										 			<div class="modal-footer">
+										 				
+										 			</div>
+										 			
+										 		</div>
+										 		
+										 	</div>
+										 </div>
+
+
 
 									</tr>
 								<?php
@@ -94,12 +143,12 @@
 
         		<input type="hidden" name="$op" value="<?php echo $op; ?>" class="form-control">
 				<input type="hidden" name="id_shop" value="<?php echo $id_shop; ?>" class="form-control">
-				<form role="form" action="<?php echo base_url(); ?>/home/save" method="POST">
+				<form role="form" id="myForm">
 					<input type="hidden" name="$op"  class="form-control">
 					<input type="hidden" name="id_shop"  class="form-control">
 
 				  <div class="form-group">
-				    <label>Product Name</label>
+				    <label>Product Name</label>	
 				    <input type="text" name="prdct_name" value="<?php echo $prdct_name; ?>"  class="form-control"  placeholder="Product Name">
 				  </div>
 
@@ -225,3 +274,36 @@
 </div>
 
 
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
